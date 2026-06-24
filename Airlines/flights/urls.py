@@ -1,0 +1,10 @@
+from . import views
+from django.urls import path
+
+
+# URLConf
+urlpatterns = [
+   path("", views.index, name="index"),
+   path("<int:flight_id>/", views.flight, name="flights"), # name is 'flights'
+   path("<int:flight_id>/book", views.book, name="book")
+]

@@ -1,0 +1,12 @@
+{% extends "count/layout.html" %}
+{% load static %}
+
+{% block head %}
+<script src="{% static 'count/hello.js' %}"></script>
+{% endblock %}
+
+{% block body %}
+<h1>Hello World</h1>
+<button onclick="hello()">Click me</button>
+<a href= "{% url 'count' %}">go to Counter</a>
+{% endblock %}

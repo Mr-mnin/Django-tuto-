@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTFOLIO.NAHIN</title>
+    <link rel="icon" type="image/x-png" href="Nsymb.png">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        html, body {
+            min-height: 100%;
+        }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #000;
+            color: #ffffff;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.55);
+            pointer-events: none;
+            z-index: -1;
+        }
+        .content {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        hr {
+            border: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+            margin: 24px 0;
+        }
+        h1 {
+            color: #ffffff;
+            font-size: clamp(2rem, 4vw, 4rem);
+            text-align: center;
+            margin: 0;
+        }
+        header {
+            background-color: rgba(0, 0, 0, 0.65);
+            padding: 30px;
+            text-align: center;
+            color: white;
+            border-radius: 24px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+        }
+        footer {
+            background-color: rgba(0, 0, 0, 0.65);
+            padding: 20px;
+            text-align: center;
+            font-size: 0.95rem;
+            color: #ccc;
+            border-radius: 20px;
+            margin-top: 30px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
+        }
+        section {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        nav {
+            flex: 1 1 280px;
+            min-width: 260px;
+            max-width: 320px;
+            background: rgba(0, 0, 0, 0.75);
+            padding: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 24px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.35);
+        }
+       nav h2 {
+            margin-top: 0;
+            margin-left: 4.5vw;
+            margin-bottom: 20px;
+            font-size: 2rem;
+            letter-spacing: 0.05em;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav li {
+            margin-bottom: 18px;
+        }
+        nav a {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+        }
+        nav ul li p {
+            font-size: clamp(1rem, 1.4vw, 1.8rem);
+            font-weight: 700;
+            padding: 14px 18px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+            margin: 0;
+        }
+        nav a:hover p {
+            transform: translateY(-4px);
+            background: rgba(255, 255, 255, 0.384);
+            box-shadow: 0 12px 30px rgba(255, 255, 255, 0.14);
+            border-color: rgba(255, 215, 0, 0.6);
+        }
+        article {
+            flex: 2 1 620px;
+            min-width: 300px;
+            background-color: rgba(0, 0, 0, 0.75);
+            padding: 30px;
+            border: 1px solid rgba(255, 215, 0, 0.25);
+            border-radius: 24px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.35);
+        }
+        article h1 {
+            margin-top: 0;
+            font-size: clamp(2rem, 3vw, 3.5rem);
+            letter-spacing: 0.05em;
+        }
+        p {
+            font-size: clamp(1rem, 1.25vw, 1.2rem);
+            line-height: 1.75;
+            margin: 1rem 0;
+            text-align: justify;
+        }
+        ul.contact-list {
+            padding-left: 1.2rem;
+            margin: 1rem 0;
+        }
+        ul.contact-list li {
+            margin: 0.7rem 0;
+        }
+        a.inline-link {
+            color: #ffd700;
+        }
+        @media (max-width: 900px) {
+            section {
+                flex-direction: column;
+            }
+            nav, article {
+                max-width: 100%;
+            }
+        }
+    </style>
+    <style>
+        .hover-underline-animation {
+            display: inline-block;
+            position: relative;
+            text-decoration: none;
+            color: inherit;
+        }
+        .hover-underline-animation::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            width: 100%;
+            height: 2px;
+            background-color: rgba(255, 215, 0, 1);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.25s ease-out;
+        }
+        .hover-underline-animation:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        #background-video {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <video autoplay muted loop id="background-video">
+        <source src="cube design.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="content">
+        <header>
+            <h1>Contact Me</h1><hr>
+        </header>
+        <section>
+            <nav>
+                <h2>Menu</h2>
+                <hr>
+                <ul>
+                    <li><a href="{% url 'home' %}" class="hover-underline-animation">
+                            <p>&bullet; Home</p>
+                        </a></li>
+                    <li><a href="{% url 'about' %}" class="hover-underline-animation">
+                                            <p>&bullet; About</p>
+                                        </a></li>
+                                    <li><a href="{% url 'projects' %}" class="hover-underline-animation">
+                                            <p>&bullet; Projects</p>
+                                        </a></li>
+                                    
+                                    <li><a href="{% url 'links' %}" class="hover-underline-animation">
+                                            <p>&bullet; Links</p>
+                                        </a></li>
+                </ul>
+            </nav>
+            <article>
+                <h1><i><u>Get in Touch</u></i></h1><hr>
+                <p>If you have a question, collaboration idea, or opportunity, I would love to hear from you.</p>
+                <ul class="contact-list">
+                    <li>Email: <a class="inline-link" href="mailto:mr.m_nin@example.com">mr.m_nin@example.com</a></li>
+                    <li>Discord: <span class="inline-link">mr.m_nin#1234</span></li>
+                    <li>Available for freelance and team-based work.</li>
+                </ul>
+                <p>Feel free to reach out with your project goals, questions about my work, or if you want to connect professionally.</p>
+            </article>
+        </section>
+        <footer>� 2026 Mr.m_nin � Built with passion and modern web design.</footer>
+    </div>
+</body>
+</html>

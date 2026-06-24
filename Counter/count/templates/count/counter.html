@@ -1,0 +1,11 @@
+{% extends "count/layout.html" %}
+{% load static %}
+
+{% block head %}
+<script src="{% static 'count/counter.js' %}"></script>
+{% endblock %}
+
+{% block body %}
+<h1>0</h1>
+<button>Count</button>
+{% endblock %}
