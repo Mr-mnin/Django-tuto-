@@ -5,4 +5,12 @@ function hello() {
   } else {
     heading.innerHTML = "Hello World";
   }
+ 
 }
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelector("form") = function () {
+    const name = document.querySelector("#name").value;
+    alert(`Hello ${name}!`)
+    
+  }
+})
