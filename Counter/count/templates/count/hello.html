@@ -6,8 +6,12 @@
 {% endblock %}
 
 {% block body %}
-<h1>Hello World</h1>
+<h1 id="hello">Hello World</h1>
 <button onclick="hello()">Click me</button><br>
+<button data-color="red">red</button>
+<button data-color="blue">blue</button>
+<button data-color="green">green</button>
+<br>
 <form>
 <input autofocus id="name" type="text" placeholder="Name">
 <input type="submit">
