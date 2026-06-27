@@ -12,3 +12,6 @@ def hello(request):
 def count(request):
     return render(request, "count/counter.html")
 
+
+def task(request):
+    return render(request, "count/task.html")
