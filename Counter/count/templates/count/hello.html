@@ -7,6 +7,10 @@
 
 {% block body %}
 <h1>Hello World</h1>
-<button onclick="hello()">Click me</button>
+<button onclick="hello()">Click me</button><br>
+<form>
+    <input autofocus id="name" placeholder="Name" type="text">
+    <input type="submit">
+</form>
 <a href= "{% url 'count' %}">go to Counter</a>
 {% endblock %}
