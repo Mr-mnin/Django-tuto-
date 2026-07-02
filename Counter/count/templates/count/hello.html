@@ -6,11 +6,24 @@
 {% endblock %}
 
 {% block body %}
-<h1>Hello World</h1>
+
+<h1 id="hello">Hello World</h1>
 <button onclick="hello()">Click me</button><br>
+<button data-color="red">red</button>
+<button data-color="blue">blue</button>
+<button data-color="green">green</button>
+<br>
+<select>
+    <option value="black">Black</option>
+    <option value="red">Red</option>
+    <option value="blue">Blue</option>
+    <option value="green">Green</option>
+</select>
+<br>
 <form>
-    <input autofocus id="name" placeholder="Name" type="text">
-    <input type="submit">
+<input autofocus id="name" type="text" placeholder="Name">
+<input type="submit">
+
 </form>
 <a href= "{% url 'count' %}">go to Counter</a>
 {% endblock %}

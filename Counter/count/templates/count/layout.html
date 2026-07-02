@@ -1,11 +1,11 @@
 {% load static %}
-<!doctype html>
-<html lang="en">
-  <head>
-    {% block head %}{% endblock %}
-  </head>
-
-  <body>
-    {% block body %} {% endblock%}
-  </body>
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'count/style.css' %}">
+        {% block head %}{% endblock %}
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+    </body>
 </html>
