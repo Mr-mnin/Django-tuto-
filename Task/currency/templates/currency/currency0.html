@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-    <title>Currency</title>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            fetch("https://api.exchangeratesapi.io/latest?base=USD&access_key=ACCESS_KEY")
-            .then(response => response.json())
-            .then(data => {
-                const rate = data.rates.EUR;
-                document.querySelector('body').innerHTML = rate;
-            })
-            .catch(error => {
-                console.log('Error:', error);
+    <head>
+        <title>Currency</title>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // this line below is to fech the json insides to the page from the link in side it
+                fetch('/currency/api/rates/')  // ✅ fetch from Django, not directly from Frankfurter
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data); // Log the entire data object to see its structure
+
+                    //function fetch(input: (string | Request) | URL, init?: RequestInit | undefined): Promise<Response>
+                    //      ^^^ this means that something is goin to come back frome the link but no instantly
+                });
             });
-        });
-    </script>
+        </script>
+    </head>
     <body>
     </body>
 </html>

@@ -1,0 +1,169 @@
+{
+  "source": "US Federal Reserve H.10 Release",
+  "date": "2026-06-26",
+  "base_currency": "USD",
+  "note": "Rates marked with usd_per_currency: true mean 1 unit of that currency = X USD. All others mean 1 USD = X units of that currency.",
+  "rates": [
+    {
+      "country": "Australia",
+      "currency": "Dollar",
+      "code": "AUD",
+      "rate": 0.6907,
+      "usd_per_currency": true
+    },
+    {
+      "country": "Brazil",
+      "currency": "Real",
+      "code": "BRL",
+      "rate": 5.1586,
+      "usd_per_currency": false
+    },
+    {
+      "country": "Canada",
+      "currency": "Dollar",
+      "code": "CAD",
+      "rate": 1.4182,
+      "usd_per_currency": false
+    },
+    {
+      "country": "China",
+      "currency": "Yuan",
+      "code": "CNY",
+      "rate": 6.798,
+      "usd_per_currency": false
+    },
+    {
+      "country": "Denmark",
+      "currency": "Krone",
+      "code": "DKK",
+      "rate": 6.554,
+      "usd_per_currency": false
+    },
+    {
+      "country": "Euro Zone",
+      "currency": "Euro",
+      "code": "EUR",
+      "rate": 1.1403,
+      "usd_per_currency": true
+    },
+    {
+      "country": "Hong Kong",
+      "currency": "Dollar",
+      "code": "HKD",
+      "rate": 7.8417,
+      "usd_per_currency": false
+    },
+    {
+      "country": "India",
+      "currency": "Rupee",
+      "code": "INR",
+      "rate": 94.37,
+      "usd_per_currency": false
+    },
+    {
+      "country": "Japan",
+      "currency": "Yen",
+      "code": "JPY",
+      "rate": 161.67,
+      "usd_per_currency": false
+    },
+    {
+      "country": "Malaysia",
+      "currency": "Ringgit",
+      "code": "MYR",
+      "rate": 4.085,
+      "usd_per_currency": false
+    },
+    {
+      "country": "Mexico",
+      "currency": "Peso",
+      "code": "MXN",
+      "rate": 17.446,
+      "usd_per_currency": false
+    },
+    {
+      "country": "New Zealand",
+      "currency": "Dollar",
+      "code": "NZD",
+      "rate": 0.5651,
+      "usd_per_currency": true
+    },
+    {
+      "country": "Norway",
+      "currency": "Krone",
+      "code": "NOK",
+      "rate": 9.9116,
+      "usd_per_currency": false
+    },
+    {
+      "country": "Singapore",
+      "currency": "Dollar",
+      "code": "SGD",
+      "rate": 1.2931,
+      "usd_per_currency": false
+    },
+    {
+      "country": "South Africa",
+      "currency": "Rand",
+      "code": "ZAR",
+      "rate": 16.4457,
+      "usd_per_currency": false
+    },
+    {
+      "country": "South Korea",
+      "currency": "Won",
+      "code": "KRW",
+      "rate": 1533.44,
+      "usd_per_currency": false
+    },
+    {
+      "country": "Sri Lanka",
+      "currency": "Rupee",
+      "code": "LKR",
+      "rate": 335.84,
+      "usd_per_currency": false
+    },
+    {
+      "country": "Sweden",
+      "currency": "Krona",
+      "code": "SEK",
+      "rate": 9.7112,
+      "usd_per_currency": false
+    },
+    {
+      "country": "Switzerland",
+      "currency": "Franc",
+      "code": "CHF",
+      "rate": 0.8082,
+      "usd_per_currency": false
+    },
+    {
+      "country": "Taiwan",
+      "currency": "Dollar",
+      "code": "TWD",
+      "rate": 31.85,
+      "usd_per_currency": false
+    },
+    {
+      "country": "Thailand",
+      "currency": "Baht",
+      "code": "THB",
+      "rate": 33.37,
+      "usd_per_currency": false
+    },
+    {
+      "country": "United Kingdom",
+      "currency": "Pound",
+      "code": "GBP",
+      "rate": 1.3223,
+      "usd_per_currency": true
+    },
+    {
+      "country": "Venezuela",
+      "currency": "Bolivar",
+      "code": "VES",
+      "rate": 620.66,
+      "usd_per_currency": false
+    }
+  ]
+}
