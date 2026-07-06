@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style>
+        
+        </style>
+        <script>
+            window.onpopstate = function(event) {
+                console.log(event.state.section);
+                showsection(event.state.section);  // ✅ load the section based on the state
+            };
+
+            function showsection(section) {
+                fetch(`/app2/section/${section}`)
+                    .then(response => response.text())
+                    .then(text => {
+                        console.log(text);
+                        document.querySelector('#content').innerHTML = text;
+                    })
+            }
+
+            document.addEventListener('DOMContentLoaded', () => {
+                document.querySelectorAll('button').forEach(button => {
+                    button.onclick = function() {              // ✅ regular function, not arrow
+                        showsection(this.dataset.section);          // ✅ now "this" works correctly
+                        history.pushState({section: section}, "", `section${section}`);  // ✅ update the URL without reloading
+                        showsection(section);          // ✅ now "this" works correctly
+                    };
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <h1>Cluad Introduction</h1>
+        <button data-section="1">Page1</button>
+        <button data-section="2">Page2</button>
+        <button data-section="3">Page3</button>
+        <div id="content"> 
+        </div>
+       
+        </div>
+    </body>
+</html>
