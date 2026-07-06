@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style>
+        
+        </style>
+        <script>
+            function showsection(section) {
+                fetch(`/section/${section}`)
+                    .then(response => response.text())
+                    .then(text => {
+                        console.log(text);
+                        document.querySelector('#content').innerHTML = text;
+                    })
+            }
+
+            document.addEventListener('DOMContentLoaded', () => {
+                document.querySelectorAll('button').forEach(button => {
+                    button.onclick = function() {              // ✅ regular function, not arrow
+                        showsection(this.dataset.section);          // ✅ now "this" works correctly
+                    };
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <h1>Cluad Introduction</h1>
+        <button data-section="1">Page1</button>
+        <button data-section="2">Page2</button>
+        <button data-section="3">Page3</button>
+        <div id="content"> 
+        </div>
+       
+        </div>
+    </body>
+</html>
