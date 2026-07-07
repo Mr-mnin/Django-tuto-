@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <style>
-        
-        </style>
         <script>
             window.onpopstate = function(event) {
                 console.log(event.state.section);
-                showsection(event.state.section);  // ✅ load the section based on the state
+                showsection(event.state.section);
             };
 
             function showsection(section) {
@@ -21,10 +18,10 @@
 
             document.addEventListener('DOMContentLoaded', () => {
                 document.querySelectorAll('button').forEach(button => {
-                    button.onclick = function() {              // ✅ regular function, not arrow
-                        showsection(this.dataset.section);          // ✅ now "this" works correctly
-                        history.pushState({section: section}, "", `section${section}`);  // ✅ update the URL without reloading
-                        showsection(section);          // ✅ now "this" works correctly
+                    button.onclick = function() {
+                        const section = this.dataset.section;  // ✅ get section from the button
+                        showsection(section);                  // ✅ load content
+                        history.pushState({section: section}, "", `section${section}`);  // ✅ update URL
                     };
                 });
             });
@@ -35,9 +32,6 @@
         <button data-section="1">Page1</button>
         <button data-section="2">Page2</button>
         <button data-section="3">Page3</button>
-        <div id="content"> 
-        </div>
-       
-        </div>
+        <div id="content"></div>
     </body>
 </html>

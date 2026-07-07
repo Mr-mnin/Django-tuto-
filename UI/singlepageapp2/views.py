@@ -11,7 +11,7 @@ text = [
 
 
 def index(request):
-    return render(request, "singlepageapp/index.html")
+    return render(request, "singlepageapp2/index.html")
 
 
 def section(request, num):
@@ -19,3 +19,6 @@ def section(request, num):
         return HttpResponse(text[num - 1])
     else:
         raise Http404("Section not found")
+
+def scroll(request):
+    return render(request, "singlepageapp2/scroll.html", {"numbers": range(1, 101)})

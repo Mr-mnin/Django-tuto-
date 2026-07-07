@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Scroll</title>
+        <script>
+
+           window.onscroll = () => {
+                if (window.scrollY + window.innerHeight >= document.body.offsetHeight - 100) {
+                    document.querySelector('body').style.backgroundColor = 'black';
+                    document.querySelectorAll('p').forEach(p => p.style.color = 'white'); // ✅
+                } else {
+                    document.querySelector('body').style.backgroundColor = 'white';
+                    document.querySelectorAll('p').forEach(p => p.style.color = 'black'); // ✅
+                }
+            };
+        </script>
+    </head>
+    <body>
+        {% for i in numbers %}
+        <p>{{ i }}</p>
+        {% endfor %}
+        
+        
+    </body>
+</html>
