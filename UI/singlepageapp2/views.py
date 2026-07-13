@@ -20,5 +20,6 @@ def section(request, num):
     else:
         raise Http404("Section not found")
 
+
 def scroll(request):
     return render(request, "singlepageapp2/scroll.html", {"numbers": range(1, 101)})

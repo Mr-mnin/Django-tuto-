@@ -2,8 +2,10 @@ import time
 from django.http import JsonResponse
 from django.shortcuts import render
 
+
 def index(request):
     return render(request, 'post/index.html')
+
 
 def animate(request):
     return render(request, 'post/animate.html')
@@ -21,7 +23,7 @@ def posts(request):
         data.append(f"Post #{i}")
 
     # Artificial delay speed response
-    time.sleep(1)
+    time.sleep(2)
 
     # Return lists of posts
     return JsonResponse({"posts": data}, safe=False)  # ✅ wrap in a dict with "posts" key

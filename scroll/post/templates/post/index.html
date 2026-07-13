@@ -3,14 +3,41 @@
 <head>
     <title>Infinite Scroll</title>
     <style>
+
+        @keyframes hide {
+            0% {
+                opacity: 1;
+                height: 100px;
+                padding: 20px;
+                line-height: 100%;
+            }
+            
+            100% {
+                opacity: 0;
+                height: 0;
+                padding: 0;
+                line-height: 0;
+            }
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+        }
         .post {
             border: 1px solid black;
             margin: 10px;
             padding: 10px;
+            background-color: lightgray;
+            animation: 'hide';
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+            animation-play-state: paused;
         }
 
         .hide {
             float: right;
+            
         }
     </style>
     <script>
@@ -34,7 +61,11 @@
         document.addEventListener('click', event => {
             const target = event.target;
             if (target.className === 'hide') {
-                target.parentElement.remove();
+                target.parentElement.style.animationPlayState = 'running'; 
+                target.parentElement.addEventListener('animationend', () => {
+                    target.parentElement.remove();
+                });
+                
             }
         });
 
