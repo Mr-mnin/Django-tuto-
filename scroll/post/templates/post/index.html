@@ -1,0 +1,82 @@
+<html lang="en">
+
+<head>
+    <title>Infinite Scroll</title>
+    <style>
+        .post {
+            border: 1px solid black;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .hide {
+            float: right;
+        }
+    </style>
+    <script>
+        // Start with first post
+        let counter = 1;
+
+        // load 20 posts at a time
+        const quantity = 20;
+
+        // When DOM is loads, render the first 20 posts
+        document.addEventListener('DOMContentLoaded', load);
+
+        window.onscroll = () => {
+            // When user scrolls to bottom of page, load more posts
+            if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+                load();
+            }
+        };
+
+        //hide post when hide button is clicked
+        document.addEventListener('click', event => {
+            const target = event.target;
+            if (target.className === 'hide') {
+                target.parentElement.remove();
+            }
+        });
+
+        //load next set of posts
+        function load() {
+
+            //set start and end post numbers, update counter
+            const start = counter
+            const end = start + quantity - 1;
+            counter = end + 1;
+
+            //Get new posts and add posts
+            fetch(`/post/posts/?start=${start}&end=${end}`)
+                .then(response => response.json())
+                .then(data => {
+                    data.posts.forEach(add_post);
+                })
+
+        };
+        function add_post(content) {
+
+            //Create new posts
+            const post = document.createElement('div');
+            post.className = 'post';
+            //post.innerHTML = content;
+            post.innerHTML = `${content}<button class="hide">Hide</button>`;
+
+            //Add post to DOM
+            document.querySelector('#post').append(post);
+        };
+
+        
+            
+
+        
+
+    </script>
+</head>
+
+<body>
+
+    <div id="post"></div>
+</body>
+
+</html>
