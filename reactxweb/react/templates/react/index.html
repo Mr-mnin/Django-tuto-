@@ -1,36 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
-        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
-        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>React App</title>
-    </head>
-    <body>  
-        <div id="root"></div>
-        <script type="text/babel">
-            function hello() {
-                return (
-                    <div>
-                        <h1>Hello, World!</h1>
-                    </div>
-                );
-            }
+  <head>
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://babeljs.io/docs/setup/"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      
 
-           function App() {
-                return (
-                    <div>
-                         <hello name="Nahin" />
-                    </div>
-                );
-            }
-            ReactDOM.render(
-              <h1><App /></h1>,
-                document.getElementById('root')
-            );
-        </script>
-    </body>
+      function App() {
+        const [count, setCount] = React.useState(0);
+        function updateCount() {
+          setCount(count + 1);
+        }
+        return (
+          <div>
+            <div>{count}</div>
+            <button onClick={updateCount}>Count</button>
+          </div>
+        );
+      }
 
+      
+      ReactDOM.render(
+        <h1>
+          <App />
+        </h1>,
+        document.getElementById("root"),
+      );
+    </script>
+  </body>
 </html>

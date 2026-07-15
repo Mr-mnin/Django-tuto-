@@ -1,0 +1,134 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://babeljs.io/docs/setup/"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>addgame</title>
+    <style>
+      #app{
+        text-align: center;
+        font-family: sans-serif;
+      }
+      #prob{
+        font-size: 70px;
+      }
+      .incorrect{
+        color: red;
+      }
+      @keyframes open {
+        0% {
+          front-size: 50%;
+          margin-top: 25%;
+        }
+        50% {
+          font-size: 100%;
+          margin-top: 25%;
+        }
+        100% {
+          front-size: 50%;
+          margin-top: 25%;
+        }
+        
+      }
+      #won{
+        text-align: center;
+        font-size: 70px;
+        color: green;
+        animation-name: open;
+        animation-duration: 3s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      
+
+      function App() {
+        //const [num1, setNum1] = React.useState(1);---|
+        //const [num2, setNum2] = React.useState(2);---|
+        const [state, setState] = React.useState({//<--|same as above but neat
+            num1: Math.ceil(Math.random() * 10),
+            num2:  Math.ceil(Math.random() * 10),
+            response:"",
+            score: 0,
+        });
+       
+        function inputkeypress(event) {
+            if (event.key==="Enter"){
+                const ans = parseInt(state.response)
+                if (state.num1 + state.num2 === ans){
+                    //the User got the answer right
+                    setState({
+                        ...state,
+                        num1: Math.ceil(Math.random() * 10),
+                        num2:  Math.ceil(Math.random() * 10),
+                        score: state.score + 1,
+                        response: "",
+                        incorrect: false
+                    });
+
+                }else{
+                    //the User got the answer wrong
+                    setState({
+                        ...state,
+                        num1: Math.ceil(Math.random() * 10),
+                        num2:  Math.ceil(Math.random() * 10),
+                        score: state.score - 1,
+                        response: "",
+                        incorrect: true
+                    });
+                }
+            }
+        }
+
+        function updateresponse(event) {
+            setState({
+                //num1: state.num1,
+                //num2: state.num2,
+                ...state,//<-this mean all the othe state will remain the same
+                response: event.target.value,
+            });
+        }
+
+        if(state.score === 1){
+          return(
+            <div id = 'won'>
+              You Won!
+            </div>
+          )
+        }
+
+        return(
+            <div id = 'app'>
+                <div className={state.incorrect ? "incorrect":""}>{state.num1} + {state.num2}</div>
+                <input autofocus={true} onKeyPress={inputkeypress}  onChange={updateresponse} value={state.response}/>
+                <div>Score: {state.score}</div>
+            </div>
+        )
+      }
+
+      
+      ReactDOM.render(
+        <h1>
+          <App />
+        </h1>,
+        document.getElementById("root"),
+      );
+    </script>
+  </body>
+</html>
